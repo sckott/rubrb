@@ -1,5 +1,5 @@
 require "rubrb/version"
-require "rubrb/methods-array"
+require "rubrb/methods_array"
 require "rubrb/utils"
 
 ##
