@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "test-unit", '~> 3.1', '>= 3.1.9'
 
   s.add_runtime_dependency 'thor', '~> 0.19.1'
+  s.add_runtime_dependency 'safe_yaml', '~> 1.0', '>= 1.0.4'
 end

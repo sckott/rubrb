@@ -1,6 +1,6 @@
-require "rubrb/version"
-require "rubrb/methods_array"
 require "rubrb/utils"
+require "rubrb/methods_array"
+require "rubrb/version"
 
 ##
 # Rubrb - top level module

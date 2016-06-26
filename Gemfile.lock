@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     rubrb (0.1.0.9000)
+      safe_yaml (~> 1.0, >= 1.0.4)
       thor (~> 0.19.1)
 
 GEM
@@ -9,6 +10,7 @@ GEM
   specs:
     power_assert (0.3.0)
     rake (11.1.2)
+    safe_yaml (1.0.4)
     test-unit (3.1.9)
       power_assert
     thor (0.19.1)
