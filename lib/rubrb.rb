@@ -4,11 +4,6 @@ require "rubrb/version"
 # Rubrb - top level module
 
 module Rubrb
-  extend Configuration
-
-  define_setting :access_token
-  define_setting :access_secret
-
   ##
   # Run a test
   #
