@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require "thor"
+require "rubrb"
+
+class Rb < Thor
+  include Thor::Actions
+
+  desc "test [file]", "Run tests for a file"
+  long_desc <<-LONGDESC
+    `rubrb works` run tests for a file
+
+    # A single file
+    \x5$ rubrb test fart
+  LONGDESC
+  def test(file)
+    Rubrb.test(file: file)
+  end
+
+end
+
+Rb.start(ARGV)
