@@ -8,13 +8,26 @@ class Rb < Thor
 
   desc "test [file]", "Run tests for a file"
   long_desc <<-LONGDESC
-    `rubrb works` run tests for a file
+    `rb test` a file
 
     # A single file
-    \x5$ rubrb test fart
+    \x5$ rb test config
   LONGDESC
   def test(file)
     Rubrb.test(file: file)
+  end
+
+  desc "tests [file]", "Run tests for many files"
+  long_desc <<-LONGDESC
+    `rb tests` many files
+
+    # Many iles
+    \x5$ rb tests config auth
+  LONGDESC
+  def tests(*file)
+    file.each do |x|
+      Rubrb.test(file: file)
+    end
   end
 
 end

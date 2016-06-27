@@ -24,12 +24,15 @@ module Rubrb
     case files
     when files.length == 0
       raise 'zero files matched: change your search string'
-    when files.length > 1
-      raise 'more than one file matched: be more specific'
+    # when files.length > 1
+    #   raise 'more than one file matched: be more specific'
     else
       puts 'using ' + files[0]
     end
-    system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true'); library(%s); library(testthat); test_file('%s')\"" % [pkg, files[0]])
+    system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true');
+      library(devtools); load_all(); library(testthat);
+      %s\"" % files.map { |x| "test_file('%s') " % x }.join('; '))
+    #system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true'); library(%s); library(testthat); test_file('%s')\"" % [pkg, files[0]])
   end
 
 end
