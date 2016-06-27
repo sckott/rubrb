@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.bindir      = 'bin'
-  s.executables = ['rubrb']
+  s.executables = ['rb']
 
   s.add_development_dependency "bundler", '~> 1.12', '>= 1.12.5'
   s.add_development_dependency "rake", '~> 11.1', '>= 11.1.2'

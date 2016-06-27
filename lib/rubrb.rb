@@ -22,14 +22,14 @@ module Rubrb
     files = list_files()
     files = files.guess_file_name(file)
     case files
-    when files.lenth == 0
+    when files.length == 0
       raise 'zero files matched: change your search string'
-    when files.lenth > 1
+    when files.length > 1
       raise 'more than one file matched: be more specific'
     else
       puts 'using ' + files[0]
     end
-    system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true'); library(%s); library(testthat); test_file('%s')\"" % [pkg, file])
+    system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true'); library(%s); library(testthat); test_file('%s')\"" % [pkg, files[0]])
   end
 
 end

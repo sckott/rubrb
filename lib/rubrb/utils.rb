@@ -1,8 +1,11 @@
 require 'safe_yaml'
 
+SafeYAML::OPTIONS[:default_mode] = :safe
+
 def get_pkg_name
   begin
     desc = YAML.load_file('DESCRIPTION')
+    puts 'using package: ' + desc['Package']
     return desc['Package']
   rescue Exception => e
     puts e
