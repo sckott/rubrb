@@ -9,7 +9,7 @@ module Rubrb
   ##
   # Run a test
   #
-  # @param ids [Array] DOIs (digital object identifier) or other identifiers
+  # @param file [Array] file names or partial names
   #
   # @example
   #      require 'rubrb'
@@ -17,22 +17,28 @@ module Rubrb
   #      Rubrb.test(file: 'config-fxns')
   #      Rubrb.test(file: 'config')
   def self.test(file:)
-    #system("Rscript -e \"print('%s')\"" % file)
-    pkg = get_pkg_name()
+    if file.nil? or file.length == 0
+      raise 'please give file name or partial file name'
+    end
+    # pkg = get_pkg_name()
     files = list_files()
-    files = files.guess_file_name(file)
+    files = file.collect { |x| files.guess_file_name(x)[0] }.compact
     case files
     when files.length == 0
       raise 'zero files matched: change your search string'
-    # when files.length > 1
-    #   raise 'more than one file matched: be more specific'
     else
-      puts 'using ' + files[0]
+      puts 'using:'
+      files.each { |x|
+        puts '  ' + x
+      }
     end
-    system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true');
+
+    str = "Rscript -e \"Sys.setenv(NOT_CRAN = 'true');
       library(devtools); load_all(); library(testthat);
-      %s\"" % files.map { |x| "test_file('%s') " % x }.join('; '))
-    #system("Rscript -e \"Sys.setenv(NOT_CRAN = 'true'); library(%s); library(testthat); test_file('%s')\"" % [pkg, files[0]])
+      %s\"" % files.map { |x| "test_file('%s') " % x }.join('; ')
+    str = str.gsub(/\n/, '')
+    # puts str
+    system(str)
   end
 
 end
