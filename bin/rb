@@ -6,9 +6,9 @@ require "rubrb"
 class Rb < Thor
   include Thor::Actions
 
-  desc "test [file]", "Run tests for a file"
+  desc "test [file]", "Run tests for a file or many"
   long_desc <<-LONGDESC
-    `rb test` a file
+    `rb test` one or more files - can pass in partial names, see examples
 
     # A single test
     \x5$ rb test config

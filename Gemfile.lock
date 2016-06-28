@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubrb (0.1.0.9000)
+    rubrb (0.1.4.9000)
       safe_yaml (~> 1.0, >= 1.0.4)
       thor (~> 0.19.1)
 

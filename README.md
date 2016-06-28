@@ -33,28 +33,48 @@ rake install
 
 ### Use in a Ruby repl
 
-Search works by DOI
+Run a test by partial or full file name
 
 ```ruby
 require 'rubrb'
-rubrb.test(file: 'mystuff')
+Rubrb.test(file: 'config')
 ```
 
 ### Use on the CLI
 
-The command line tool `rubrb` should be available after you install
+The command line tool `rb` should be available after you install
 
 ```
 ~$ rubrb
 Commands:
-  rubrb help [COMMAND]  # Describe available commands or one specific command
-  rubrb test [file]     # Run tests for a file
+  rb help [COMMAND]  # Describe available commands or one specific command
+  rb test [file]     # Run tests for a file or many
 ```
 
+A single test
+
 ```
-# A single DOI
-~$ rubrb test 'tests/testthat/test-config-fxns.R'
+➜ rb test config
+using:
+  tests/testthat/test-config-fxns.R
+
 config fxns: ........
+
+DONE ===========================================================================
+```
+
+Many tests
+
+```
+➜ rb test config auth
+using:
+  tests/testthat/test-config-fxns.R
+  tests/testthat/test-authentication.R
+
+config fxns: ........
+
+DONE ===========================================================================
+authentication: ...................
 
 DONE ===========================================================================
 ```
