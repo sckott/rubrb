@@ -17,6 +17,8 @@ For changes see the [Changelog][changelog]
 
 ### Release version
 
+_not on Rubygems yet!_
+
 ```
 gem install rubrb
 ```
@@ -24,9 +26,8 @@ gem install rubrb
 ### Development version
 
 ```
-git clone git@github.com:sckott/rubrb.git
-cd rubrb
-rake install
+gem install specific_install
+gem specific_install https://github.com/sckott/rubrb.git
 ```
 
 ## Examples
