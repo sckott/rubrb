@@ -49,7 +49,7 @@ Commands:
   rb version         # Get current package version
 ```
 
-<a href="https://asciinema.org/a/0jXePWCrovQ05PO3qW8gDtLGN" target="_blank"><img src="https://asciinema.org/a/0jXePWCrovQ05PO3qW8gDtLGN.png" /></a>
+<a href="https://asciinema.org/a/0jXePWCrovQ05PO3qW8gDtLGN" target="_blank"><img src="https://asciinema.org/a/0jXePWCrovQ05PO3qW8gDtLGN.png" height="300" /></a>
 
 ### test
 
