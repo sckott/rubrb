@@ -7,6 +7,20 @@ require "rubrb/version"
 
 module Rubrb
   ##
+  # List test files
+  #
+  # @example
+  #      require 'rubrb'
+  #      Rubrb.lstests
+  def self.lstests
+    nm = get_pkg_name
+    files = list_files()
+    files = files.map { |x| File.basename(x).sub("test-", "").sub("\.R", "").sub("\.r", "") }
+    return files
+  end
+
+
+  ##
   # Run a test
   #
   # @param file [Array] file names or partial names
@@ -40,6 +54,7 @@ module Rubrb
     # puts str
     system(str)
   end
+
 
   ##
   # List pkg reverse dependencies

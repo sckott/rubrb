@@ -62,6 +62,18 @@ class Rb < Thor
     puts Rubrb.check
   end
 
+
+  desc "lst", "List test files"
+  long_desc <<-LONGDESC
+    `rb lst` lists test files
+
+    # list test files
+    \x5$ rb lst
+  LONGDESC
+  def lst
+    puts Rubrb.lstests
+  end
+
 end
 
 Rb.start(ARGV)

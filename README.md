@@ -47,6 +47,7 @@ The command line tool `rb` should be available after you install
 Commands:
   rb check           # Run R CMD Check
   rb help [COMMAND]  # Describe available commands or one specific command
+  rb lst             # List test files
   rb revdeps         # List reverse dependencies
   rb test [file]     # Run tests for a file or many
   rb version         # Get current package version
