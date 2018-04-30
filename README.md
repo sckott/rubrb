@@ -18,18 +18,14 @@ For changes see the [Changelog][changelog]
 
 ## Install
 
-### Release version
-
-### Development version
+Development version
 
 ```
 gem install specific_install
 gem specific_install https://github.com/sckott/rubrb.git
 ```
 
-## Examples
-
-### Use in a Ruby repl
+## Use in a Ruby repl
 
 Run a test by partial or full file name
 
@@ -38,7 +34,7 @@ require 'rubrb'
 Rubrb.test(file: 'config')
 ```
 
-### Use on the CLI
+## Use on the CLI
 
 The command line tool `rb` should be available after you install
 
@@ -52,6 +48,10 @@ Commands:
   rb test [file]     # Run tests for a file or many
   rb version         # Get current package version
 ```
+
+<a href="https://asciinema.org/a/0jXePWCrovQ05PO3qW8gDtLGN" target="_blank"><img src="https://asciinema.org/a/0jXePWCrovQ05PO3qW8gDtLGN.png" /></a>
+
+### test
 
 A single test
 
@@ -81,7 +81,7 @@ authentication: ...................
 DONE ===========================================================================
 ```
 
-revdeps
+### revdeps
 
 ```
 ➜  taxize git:(master) rb revdeps
