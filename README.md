@@ -12,16 +12,13 @@ For changes see the [Changelog][changelog]
 ## API
 
 * `/test` - `Rubrb.test()`
+* `/check` - `Rubrb.check()`
+* `/version` - `Rubrb.version()`
+* `/revdeps` - `Rubrb.revdeps()`
 
 ## Install
 
 ### Release version
-
-_not on Rubygems yet!_
-
-```
-gem install rubrb
-```
 
 ### Development version
 
@@ -48,8 +45,11 @@ The command line tool `rb` should be available after you install
 ```
 ~$ rubrb
 Commands:
+  rb check           # Run R CMD Check
   rb help [COMMAND]  # Describe available commands or one specific command
+  rb revdeps         # List reverse dependencies
   rb test [file]     # Run tests for a file or many
+  rb version         # Get current package version
 ```
 
 A single test
@@ -78,6 +78,15 @@ DONE ===========================================================================
 authentication: ...................
 
 DONE ===========================================================================
+```
+
+revdeps
+
+```
+➜  taxize git:(master) rb revdeps
+using package: taxize
+[1] "mapr"     "rbison"   "RNeXML"   "rnoaa"    "spocc"    "taxizedb" "onekp"
+[8] "rotl"
 ```
 
 ## Meta
