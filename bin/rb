@@ -20,6 +20,48 @@ class Rb < Thor
     Rubrb.test(file: file)
   end
 
+
+  desc "revdeps", "List reverse dependencies"
+  long_desc <<-LONGDESC
+    `rb revdeps` choose which revdeps, by default list all
+
+    # All revdeps
+    \x5$ rb revdeps
+
+    # Just suggests
+    \x5$ rb revdeps suggests
+
+    # Just imports
+    \x5$ rb revdeps imports
+  LONGDESC
+  def revdeps(which = "all")
+    Rubrb.revdeps(which: which)
+  end
+
+
+  desc "version", "Get current package version"
+  long_desc <<-LONGDESC
+    `rb version` get current package version
+
+    # get version
+    \x5$ rb version
+  LONGDESC
+  def version
+    puts Rubrb.version
+  end
+
+
+  desc "check", "Run R CMD Check"
+  long_desc <<-LONGDESC
+    `rb check` runs check on the current working directory
+
+    # run check
+    \x5$ rb check
+  LONGDESC
+  def check
+    puts Rubrb.check
+  end
+
 end
 
 Rb.start(ARGV)

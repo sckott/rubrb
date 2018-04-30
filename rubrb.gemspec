@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = Rubrb::VERSION
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.0'
-  s.date        = '2016-06-26'
+  s.date        = '2018-04-30'
   s.summary     = "command line toolset for R things"
   s.description = "command line toolset for running R things"
   s.authors     = "Scott Chamberlain"
@@ -22,10 +22,9 @@ Gem::Specification.new do |s|
   s.bindir      = 'bin'
   s.executables = ['rb']
 
-  s.add_development_dependency "bundler", '~> 1.12', '>= 1.12.5'
-  s.add_development_dependency "rake", '~> 11.1', '>= 11.1.2'
-  s.add_development_dependency "test-unit", '~> 3.1', '>= 3.1.9'
+  s.add_development_dependency 'bundler', '~> 1.16', '>= 1.16.1'
+  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.1'
+  s.add_development_dependency 'test-unit', '~> 3.2', '>= 3.2.7'
 
-  s.add_runtime_dependency 'thor', '~> 0.19.1'
-  s.add_runtime_dependency 'safe_yaml', '~> 1.0', '>= 1.0.4'
+  s.add_runtime_dependency 'thor', '~> 0.20.0'
 end

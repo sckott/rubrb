@@ -41,4 +41,42 @@ module Rubrb
     system(str)
   end
 
+  ##
+  # List pkg reverse dependencies
+  #
+  # @example
+  #      require 'rubrb'
+  #      Rubrb.revdeps()
+  def self.revdeps(which: "all")
+    nm = get_pkg_name
+    if which != "all"
+      which = which.downcase.capitalize
+    end
+    str = "Rscript -e \"tools::dependsOnPkgs('%s', '%s');\"" % [nm, which]
+    system(str)
+  end
+
+  ##
+  # Get current pkg version
+  #
+  # @example
+  #      require 'rubrb'
+  #      Rubrb.version()
+  def self.version
+    desc = get_description
+    return desc['Version']
+  end
+
+
+  ##
+  # Run R CMD CHECK
+  #
+  # @example
+  #      require 'rubrb'
+  #      Rubrb.check()
+  def self.check
+    str = "Rscript -e \"devtools::check(document = FALSE, cran = TRUE)\""
+    system(str)
+  end
+
 end
